@@ -1,0 +1,60 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay {
+    z-index: 999999999;
+  }
+}
+.title-chucvu {
+  height: 5.5rem;
+  .title-chucvu-content {
+    height: 80%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .name-doctor {
+      font-weight: 600;
+      @media screen and (max-width: 1200px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 991px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 0.9rem;
+      }
+      @media screen and (max-width: 576px) {
+        font-size: 1.2rem;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 13px;
+      }
+      @media screen and (max-width: 495px) {
+        font-size: 11px;
+      }
+    }
+    .name-specialty {
+      @media screen and (max-width: 1200px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 991px) {
+        font-size: 11px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 1rem;
+      }
+      @media screen and (max-width: 576px) {
+        font-size: 1.2rem;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

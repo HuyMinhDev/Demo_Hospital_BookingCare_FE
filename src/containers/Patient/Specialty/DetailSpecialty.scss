@@ -1,0 +1,100 @@
+.detail-specialty-container {
+  .bg-description {
+    background-color: #eee;
+    padding: 20px 15px;
+    .description-specialty {
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      border-radius: 5px;
+      padding: 10px;
+      h1 {
+        color: #48c2d4;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      h2 {
+        color: #48c2d4;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .bg-body-detail {
+    background: #eee;
+    padding: 0 15px 15px 15px;
+    .search-sp-doctor {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 15px;
+      padding: 8px 0;
+
+      .react-select__control {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        min-height: 38px;
+        font-size: 14px;
+        box-shadow: none;
+        transition: border-color 0.2s;
+
+        &:hover {
+          border-color: #888;
+        }
+      }
+
+      .react-select__value-container {
+        padding: 4px 8px;
+      }
+
+      .react-select__menu {
+        z-index: 10;
+      }
+
+      .react-select__option {
+        font-size: 14px;
+        padding: 8px 12px;
+
+        &--is-selected {
+          background-color: #007bff;
+          color: #fff;
+        }
+
+        &--is-focused {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 18.75rem;
+      margin: 15px 0;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      border-radius: 8px;
+
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+      }
+      .dt-content-right {
+        width: 50%;
+        //   border: 1px solid orange;
+        padding: 10px;
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border: none;
+          }
+        }
+        .doctor-extra-infor {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-infor-container {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

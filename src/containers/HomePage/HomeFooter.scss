@@ -1,0 +1,140 @@
+footer {
+  background-color: #edfffa;
+
+  .footer-top {
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #42b5db;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      padding: 1.9rem 0;
+    }
+
+    p {
+      color: black;
+      font-size: 15px;
+      line-height: 2em;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+    }
+    .footer-grid {
+      padding-top: 25px;
+      padding-bottom: 22px;
+    }
+  }
+
+  .footer-link,
+  .footer-contact {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-right: 1rem;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 1.5em;
+      letter-spacing: 1px;
+      transition: all 0.5s;
+
+      &:hover {
+        color: #42b5db;
+      }
+    }
+  }
+
+  .footer-link {
+    i {
+      color: #42b5db;
+    }
+  }
+
+  .footer-contact {
+    i {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #4b4b50;
+      color: black;
+      text-align: center;
+      line-height: 35px;
+      transition: all 0.5s;
+
+      &:hover {
+        color: #42b5db;
+        border-color: #42b5db;
+      }
+    }
+  }
+
+  .footer-form {
+    margin-top: 3rem;
+
+    label {
+      color: #42b5db;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    input {
+      padding: 14px;
+      border-radius: 0;
+      border: none;
+      letter-spacing: 1px;
+      color: #888888;
+      height: auto;
+    }
+
+    button {
+      background-color: #42b5db;
+      padding: 12px 35px;
+      letter-spacing: 1px;
+      border-radius: 0;
+      color: white;
+      outline: none;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #ec1955;
+        color: white;
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: #0f0f10;
+    text-align: center;
+    padding: 2.3rem 0;
+    letter-spacing: 1px;
+    color: white;
+
+    a {
+      text-decoration: none;
+      color: #42b5db;
+      transition: all 0.5s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 575.98px) {
+  footer {
+    .footer-form {
+      input,
+      button {
+        padding: 10px;
+        border: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}

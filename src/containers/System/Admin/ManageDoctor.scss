@@ -1,0 +1,69 @@
+.manage-doctor-container {
+  padding: 5px;
+  .manage-doctor-title {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .more-infor {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    .content-left {
+      width: 35%;
+    }
+    .content-right {
+      width: 65%;
+    }
+  }
+  .save-content-doctor {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background: orange;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .create-content-doctor {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background: rgb(0, 81, 255);
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .delete-content-doctor {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background: red;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+    opacity: 1;
+  }
+
+  .delete-content-doctor.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

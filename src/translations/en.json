@@ -1,0 +1,214 @@
+{
+  "homeheader": {
+    "speciality": "Medical speciality",
+    "searchdoctor": "Find a doctor by speciality",
+    "health-facility": "Health facilities",
+    "select-room": "Select hospital clinic",
+    "doctor": "Doctor",
+    "select-doctor": "Choose a good doctor",
+    "fee": "Handbook",
+    "check-health": "Refer to the manual",
+    "support": "Support",
+    "welcome": "Welcome"
+  },
+  "banner": {
+    "title1": "MEDICAL PLATFORM",
+    "title2": "COMPREHENSIVE HEALTH CARE",
+    "child3": "Specialist examination",
+    "child4": "Remote examination",
+    "child5": "General examination",
+    "child6": "Medical test",
+    "child7": "Mental health",
+    "child8": "Dental checkup"
+  },
+
+  "menu": {
+    "admin": {
+      "manage-user": "Users System",
+      "manage-doctor": "Manage doctors",
+      "manage-admin": "Manage admins",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD redux",
+      "clinic": "Clinics",
+      "manage-clinic": "Manage clinics",
+      "specialty": "Specialties",
+      "manage-specialty": "Manage specialties",
+      "manage-infor-specialty": "Manage information specialties",
+      "manage-infor-clinic": "Clinic information management",
+      "handbook": "Handbook",
+      "manage-handbook": "Manage handbook",
+      "manage-infor-handbook": "Manage information handbooks",
+      "manage-about": "Manage about"
+    },
+    "doctor": {
+      "manage-schedule": "Manage Doctor's schedule",
+      "manage-patient": "Patient management"
+    }
+  },
+  "manage-user": {
+    "add": "Add a new user",
+    "email": "Email",
+    "password": "Password",
+    "first-name": "First name",
+    "last-name": "Last name",
+    "address": "Address",
+    "phone-number": "Phone number",
+    "gender": "Gender",
+    "position": "Position",
+    "role": "Role",
+    "image": "Avatar",
+    "create": "Create User",
+    "edit": "Save User",
+    "pl-email": "you@example.com",
+    "pl-password": "Enter password",
+    "pl-first-name": "Full name (An)",
+    "pl-last-name": "Last name (Nguyen Van)",
+    "pl-address": "123 Nguyen Trai Street, District 1, HCMC",
+    "pl-number": "0123 456 789",
+    "select-gender": "Choose gender",
+    "select-position": "Choose position",
+    "select-role": "Choose role"
+  },
+  "homepage": {
+    "outstanding-doctor": "Outstanding Doctor of the Week",
+    "more-infor": "See more",
+    "specialty-poplular": "Popular specialties",
+    "clinic-doctor": "Outstanding medical facilities",
+    "specialty-doctor": "Specialty not updated",
+    "handbook": "Handbook",
+    "about": "About",
+    "about-title": "Media talk about hospital"
+  },
+  "manage-schedule": {
+    "title": "Manage your doctor's appointment schedule",
+    "choose-doctor": "Choose doctor",
+    "choose-date": "Choose date",
+    "save": "save information",
+    "name-doctor": "Doctor's name"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Schedule",
+      "no-schedule": "Doctor No appointments available at this time, please choose another time!",
+      "choose": "Choose",
+      "book-free": "and book (free)"
+    },
+    "extra-infor-doctor": {
+      "text-address": "Address of examination",
+      "price": "Price",
+      "detail-all": "See details",
+      "title-price": "Detail information: ",
+      "detail-infor": "Patients can pay the cost by: ",
+      "detail": "Hide information"
+    },
+    "booking-modal": {
+      "title-modal": "Information to book a medical appointment",
+      "fullName": "Fullname",
+      "phoneNumber": "Phone number",
+      "email": "Email",
+      "address": "Address",
+      "reason": "Reasons for medical examination",
+      "birthday": "Date of birth",
+      "gender": "Gender",
+      "btnComform": "Confirm",
+      "btnCancel": "Cancel",
+      "priceBooking": "Free appointment",
+      "price": "Examination price",
+      "toastSuccess": "Booking a new appointment successed!",
+      "toastError1": "You have already booked an appointment on this date. Only one booking per day is allowed.!",
+      "toastError": "Booking a new appointment error!"
+    },
+    "placeholder": {
+      "fullNamepl": "Enter full name",
+      "phoneNumberpl": "Enter phone number",
+      "emailpl": "Enter email",
+      "addresspl": "Enter contact address",
+      "reasonpl": "Enter reason for appointment",
+      "birthdaypl": "Select date of birth",
+      "genderpl": "Select gender"
+    },
+    "validation": {
+      "fullNameInvalid": "Please enter your full name.",
+      "phoneNumberInvalid": "Please enter your phone number.",
+      "emailInvalid1": "Please enter your email.",
+      "emailInvalid2": "Invalid email address.",
+      "addressInvalid": "Please enter your address.",
+      "reasonInvalid": "Please enter your reason.",
+      "birthdayInvalid": "Please select your date of birth.",
+      "genderInvalid": "Please select your gender.",
+      "phoneInvalid": "Invalid phone number format (9–11 digits)."
+    },
+    "footerHomePage": {
+      "specialities": "Popular specialties",
+      "allDoctors": "All doctors",
+      "clinics": "Medical facility",
+      "handBooks": "Guide article",
+      "addressAdmin": "280/99/10 Bui Huu Nghia, Ward 2, Binh Thanh District – HCM",
+      "disHopital": "BookingCare is an online platform for booking medical appointments with trusted doctors and hospitals, helping users save time and easily choose the right healthcare service."
+    },
+    "manage-doctor": {
+      "delete-successed": "Doctor deleted successfully",
+      "delete-error": "Delete failed doctor",
+      "confirm-delete": "Are you sure you want to delete this doctor?"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Create more doctors information",
+      "select-doctor": "Choose a doctor",
+      "select-doctor-pl": "-- Choose doctor --",
+      "select-speciality": "Choose speciality",
+      "select-speciality-pl": "-- Choose speciality --",
+      "select-clinic": "Choose clinic",
+      "select-clinic-pl": "-- Choose clinic --",
+      "intro": "Introduction",
+      "add": "Create information",
+      "save": "Save information",
+      "price": "Price",
+      "price-pl": "-- Choose price --",
+      "payment": "Payment",
+      "payment-pl": "-- Choose payment --",
+      "province": "Province",
+      "province-pl": "-- Choose province/city --",
+      "nameClinic": "Clinic's name",
+      "addressClinic": "Clinic's address",
+      "note": "Note",
+      "manage-specialty": "Specialized management",
+      "manage-infor-specialty": "Specialist Information Management",
+      "nameSpecialty": "Specialty name",
+      "chooseSpecialty": "Choose speciality",
+      "imageSpecialty": "Specialized photos",
+      "desSpecialty": "Specialty Description",
+      "create-speciality": "Create specialty",
+      "delete": "Delete",
+      "toast-saveSuccess": "Update successful!",
+      "toast-saveError": "Update failed!",
+      "toast-deleteSuccess": "Deleted successfully!",
+      "toast-deleteError": "Delete failed!",
+      "toast-chooseSpecialty": "Please select specialty!",
+      "toast-chooseClinic": "Please select clinic!",
+
+      "manage-clinic": "Manage Clinics",
+      "manage-infor-clinic": "Manage Clinic Information",
+      "chooseClinic": "Choose Clinic",
+      "imageClinic": "Clinic Image",
+      "desClinic": "Clinic Description",
+      "create-clinic": "Create Clinic"
+    },
+    "manage-handbook": {
+      "title-handbook": "Handbook Management",
+      "name-handbook": "Handbook Name",
+      "image-handbook": "Handbook Image",
+      "description-handbook": "Detailed Description",
+      "create-handbook": "Create Handbook",
+      "manage-infor-handbook": "Manage Handbook Information",
+      "chooseHandbook": "Select Handbook",
+      "toast-chooseHandbook": "Please select a handbook!",
+      "save": "Save information",
+      "delete": "Delete"
+    },
+    "manage-about": {
+      "about": "Manage About"
+    }
+  }
+}

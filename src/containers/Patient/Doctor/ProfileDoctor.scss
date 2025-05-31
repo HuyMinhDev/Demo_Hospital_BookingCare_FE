@@ -1,0 +1,66 @@
+.profile-doctor-container {
+  .intro-doctor {
+    display: flex;
+
+    .content-left {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      @media screen and (max-width: 767px) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .content-right {
+      width: calc(100% - 80px);
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      .up {
+        font-size: 15px;
+        font-weight: 600;
+        @media screen and (max-width: 767px) {
+          font-size: 0.9rem;
+          padding-right: 5px;
+        }
+        @media screen and (max-width: 450px) {
+          font-size: 0.75rem;
+          padding-right: 0px;
+        }
+      }
+      .down {
+        // padding-top: 10px;
+        text-align: left;
+        @media screen and (max-width: 767px) {
+          font-size: 1rem;
+          padding-right: 5px;
+        }
+        @media screen and (max-width: 450px) {
+          font-size: 0.7rem;
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+  .see-more {
+    padding-left: 10px;
+    padding-top: 5px;
+
+    text-decoration: underline;
+    a {
+      cursor: pointer;
+      color: #40aebf;
+      @media screen and (max-width: 450px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .price {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

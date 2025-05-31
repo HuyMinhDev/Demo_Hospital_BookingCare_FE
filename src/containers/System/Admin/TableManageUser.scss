@@ -1,0 +1,52 @@
+#TableManageUser {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04aa6d;
+    color: white;
+  }
+}
+
+.btn-edit {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: #dbf4ef;
+  color: #3f9f92;
+  margin-right: 10px;
+  &:hover {
+    background-color: #dbf4ef !important;
+    color: orange !important;
+  }
+}
+.btn-delete {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: #ffebe8;
+  color: #c05253;
+  &:hover {
+    background-color: #ffebe8 !important;
+    color: rgb(252, 5, 5) !important;
+  }
+}

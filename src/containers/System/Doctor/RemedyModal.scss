@@ -1,0 +1,27 @@
+.remedy-modal-container {
+  .modal-content {
+    border-radius: 10px;
+    padding: 10px;
+    .modal-header {
+      button {
+        font-size: 25px;
+        font-weight: 300;
+        color: white;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+
+  .remedy-form {
+    .form-group {
+      label {
+        font-weight: 600;
+      }
+
+      input {
+        border-radius: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "homeheader": {
+    "speciality": "Chuyên Khoa",
+    "searchdoctor": "Tìm bác sĩ theo chuyên khoa",
+    "health-facility": "Cơ sở y tế",
+    "select-room": "Chọn bệnh viện phòng khám",
+    "doctor": "Bác sĩ",
+    "select-doctor": "Chọn bác sĩ giỏi",
+    "fee": "Cẩm nang",
+    "check-health": "Tham khảo cẩm nang",
+    "support": "Hỗ trợ",
+    "welcome": "Xin chào"
+  },
+  "banner": {
+    "title1": "NỀN TẢNG Y TẾ",
+    "title2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+    "child3": "Khám chuyên khoa",
+    "child4": "Khám từ xa",
+    "child5": "Khám tổng quát",
+    "child6": "Xét nghiệm y học",
+    "child7": "Sức khỏe tinh thần",
+    "child8": "Khám nha khoa"
+  },
+
+  "menu": {
+    "admin": {
+      "manage-user": "Người dùng",
+      "manage-doctor": "Quản lý bác sĩ",
+      "manage-admin": "Quản lý admin",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD redux",
+      "clinic": "Phòng khám",
+      "manage-clinic": "Quản lý phòng khám",
+      "specialty": "Chuyên khoa",
+      "manage-specialty": "Quản lý chuyên khoa",
+      "manage-infor-specialty": "Quản lý thông tin chuyên khoa",
+      "manage-infor-clinic": "Quản lý thông tin phòng khám",
+      "handbook": "Cẩm nang",
+      "manage-handbook": "Quản lý cẩm nang",
+      "manage-infor-handbook": "Quản lý thông tin cẩm nang",
+      "manage-about": "Quản lý about"
+    },
+    "doctor": {
+      "manage-schedule": "Quản lý kế hoạch khám bệnh",
+      "manage-patient": "Quản lí bệnh nhân khám bệnh"
+    }
+  },
+  "manage-user": {
+    "add": "Thêm mới người dùng",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "first-name": "Tên",
+    "last-name": "Họ",
+    "address": "Địa chỉ",
+    "phone-number": "Số điện thoại",
+    "gender": "Giới tính",
+    "position": "Chức vụ",
+    "role": "Vai trò",
+    "image": "Ảnh đại diện",
+    "create": "Thêm User",
+    "edit": "Lưu User",
+    "pl-email": "you@example.com",
+    "pl-password": "Nhập mật khẩu",
+    "pl-first-name": "Tên (An)",
+    "pl-last-name": "Họ (Nguyen Van)",
+    "pl-address": "123 Nguyễn Trãi, Quận 1, TP.HCM",
+    "pl-number": "0123 456 789",
+    "select-gender": "Chọn giới tính",
+    "select-position": "Chọn chức vụ",
+    "select-role": "Chọn vai trò"
+  },
+  "homepage": {
+    "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
+    "more-infor": "Xem Thêm",
+    "specialty-poplular": "Chuyên khoa phổ biến",
+    "clinic-doctor": "Cơ sở y tế nổi bật",
+    "specialty-doctor": "Chuyên khoa chưa cập nhật",
+    "handbook": "Cẩm nang",
+    "about": "About",
+    "about-title": "Truyền thông nói về bệnh viện"
+  },
+  "manage-schedule": {
+    "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
+    "choose-doctor": "Chọn bác sĩ",
+    "choose-date": "Chọn ngày",
+    "save": "Lưu thông tin",
+    "name-doctor": "Tên bác sĩ"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Lịch khám",
+      "no-schedule": "Bác sĩ Không có lịch hẹn trong thời gian này, vui lòng chon thời gian khác!",
+      "choose": "Chọn",
+      "book-free": "và đặt (miễn phí)"
+    },
+    "extra-infor-doctor": {
+      "text-address": "Địa chỉ khám",
+      "price": "Giá khám",
+      "detail-all": "Xem chi tiết",
+      "title-price": "Thông tin chi tiết: ",
+      "detail-infor": "Người bệnh có thể thanh toán chi phí bằng hình thức: ",
+      "detail": "Ẩn bảng giá"
+    },
+    "booking-modal": {
+      "title-modal": "Thông tin đặt lịch khám bệnh",
+      "fullName": "Họ tên",
+      "phoneNumber": "Số điện thoại",
+      "email": "Địa chỉ Email",
+      "address": "Địa chỉ liên hệ",
+      "reason": "Lý do khám",
+      "birthday": "Ngày sinh",
+      "gender": "Giới tính",
+      "btnComform": "Xác nhận",
+      "btnCancel": "Hủy",
+      "priceBooking": "Miễn phí đặt lịch",
+      "price": "Giá khám",
+      "toastSuccess": "Đã đặt lịch hẹn mới thành công!",
+      "toastError1": "Bạn đã đặt lịch hẹn vào ngày này. Mỗi ngày chỉ được phép đặt lịch hẹn một lần!",
+      "toastError": "Lỗi khi đặt lịch!"
+    },
+    "placeholder": {
+      "fullNamepl": "Nhập họ tên",
+      "phoneNumberpl": "Nhập số điện thoại",
+      "emailpl": "Nhập email",
+      "addresspl": "Nhập địa chỉ liên hệ",
+      "reasonpl": "Nhập lý do khám",
+      "birthdaypl": "Chọn ngày sinh",
+      "genderpl": "Chọn giới tính"
+    },
+    "validation": {
+      "fullNameInvalid": "Vui lòng nhập họ tên.",
+      "phoneNumberInvalid": "Vui lòng nhập số điện thoại.",
+      "emailInvalid1": "Vui lòng nhập email.",
+      "emailInvalid2": "Email không hợp lệ.",
+      "addressInvalid": "Vui lòng nhập địa chỉ.",
+      "reasonInvalid": "Vui lòng nhập lý do khám.",
+      "birthdayInvalid": "Vui lòng chọn ngày sinh.",
+      "genderInvalid": "Vui lòng chọn giới tính.",
+      "phoneInvalid": "Số điện thoại không hợp lệ (phải từ 9–11 chữ số)."
+    },
+    "footerHomePage": {
+      "specialities": "Chuyên khoa phổ biến",
+      "allDoctors": "Tất cả bác sĩ",
+      "clinics": "Cơ sở y tế",
+      "handBooks": "Bài viết cẩm nang",
+      "addressAdmin": "280/99/10 Bùi Hữu Nghĩa, P2, Quận Bình Thạnh – HCM",
+      "disHopital": "BookingCare là website hỗ trợ đặt lịch khám bệnh online với bác sĩ và bệnh viện uy tín, giúp người dùng tiết kiệm thời gian và dễ dàng chọn lựa dịch vụ phù hợp."
+    },
+    "manage-doctor": {
+      "delete-successed": "Xóa bác sĩ thành công",
+      "delete-error": "Xóa bác sĩ thất bại",
+      "confirm-delete": "Bạn có chắc chắn muốn xóa bác sĩ này?"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Tạo thêm thông tin doctors",
+      "select-doctor": "Chọn bác sĩ",
+      "select-doctor-pl": "-- Chọn bác sĩ --",
+      "select-speciality": "Chọn chuyên khoa",
+      "select-speciality-pl": "-- Chọn chuyên khoa --",
+      "select-clinic": "Chọn phòng khám",
+      "select-clinic-pl": "-- Chọn phòng khám --",
+      "intro": "Thông tin giới thiệu",
+      "add": "Tạo thông tin",
+      "save": "Lưu thông tin",
+      "price": "Giá khám bệnh",
+      "price-pl": "-- Chọn giá khám bệnh --",
+      "payment": "Phương thức thanh toán",
+      "payment-pl": "-- Chọn phương thức thanh toán --",
+      "province": "Tỉnh thành",
+      "province-pl": "-- Chọn tỉnh/thành --",
+      "nameClinic": "Tên phòng khám",
+      "addressClinic": "Địa chỉ phòng khám",
+      "note": "Ghi chú",
+      "manage-specialty": "Quản lý chuyên khoa",
+      "manage-infor-specialty": "Quản lý thông tin chuyên khoa",
+      "chooseSpecialty": "Chọn chuyên khoa",
+      "nameSpecialty": "Tên chuyên khoa",
+      "imageSpecialty": "Ảnh chuyên khoa",
+      "desSpecialty": "Mô tả chuyên khoa",
+      "create-speciality": "Tạo chuyên khoa",
+      "delete": "Xóa",
+      "toast-saveSuccess": "Cập nhật thành công!",
+      "toast-saveError": "Cập nhật thất bại!",
+      "toast-deleteSuccess": "Xóa thành công!",
+      "toast-deleteError": "Xóa thất bại!",
+      "toast-chooseSpecialty": "Vui lòng chọn chuyên khoa!",
+      "toast-chooseClinic": "Vui lòng chọn phòng khám!",
+
+      "manage-clinic": "Quản lý phòng khám",
+      "manage-infor-clinic": "Quản lý thông tin phòng khám",
+      "chooseClinic": "Chọn phòng khám",
+
+      "imageClinic": "Ảnh phòng khám",
+      "desClinic": "Mô tả phòng khám",
+      "create-clinic": "Tạo phòng khám"
+    },
+    "manage-handbook": {
+      "title-handbook": "Quản lý cẩm nang",
+      "name-handbook": "Tên cẩm nang",
+      "image-handbook": "Ảnh cẩm nang",
+      "description-handbook": "Mô tả chi tiết",
+      "create-handbook": "Tạo cẩm nang",
+      "manage-infor-handbook": "Quản lý thông tin cẩm nang",
+      "chooseHandbook": "Chọn cẩm nang",
+      "toast-chooseHandbook": "Vui lòng chọn cẩm nang!",
+      "save": "Lưu thông tin",
+      "delete": "Xóa"
+    },
+    "manage-about": {
+      "about": "Quản lí About"
+    }
+  }
+}

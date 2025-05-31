@@ -1,0 +1,23 @@
+.title-clinic {
+  height: 3.125rem;
+  .title-clinic-content {
+    height: 80%;
+    padding: 5px;
+    font-weight: bold;
+    @media screen and (max-width: 991px) {
+      font-size: 0.8rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 0.85rem;
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 1.3rem;
+    }
+    @media screen and (max-width: 455px) {
+      font-size: 0.9rem;
+    }
+  }
+}
