@@ -7,6 +7,7 @@ import { LANGUAGES } from "../../../utils";
 import Select from "react-select";
 import "./ListAllHandbook.scss";
 import LoadingOverlay from "react-loading-overlay";
+
 class ListAllHandbook extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,8 @@ class ListAllHandbook extends Component {
       allHandbooks: [],
       selectedHandbookId: null,
       isShowLoading: false,
+      currentPage: 1,
+      handbooksPerPage: 9,
     };
   }
 
@@ -32,12 +35,8 @@ class ListAllHandbook extends Component {
   }
 
   handleOnChangeHandbook = (selected) => {
-    this.setState({ isShowLoading: true });
-
     const selectedId = selected ? selected.value : null;
-    this.setState({ selectedHandbookId: selectedId });
-
-    this.setState({ isShowLoading: false });
+    this.setState({ selectedHandbookId: selectedId, currentPage: 1 });
   };
 
   handleDetailHandbook = (id) => {
@@ -46,8 +45,18 @@ class ListAllHandbook extends Component {
     }
   };
 
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
+  };
+
   render() {
-    const { allHandbooks, selectedHandbookId } = this.state;
+    const {
+      allHandbooks,
+      selectedHandbookId,
+      isShowLoading,
+      currentPage,
+      handbooksPerPage,
+    } = this.state;
     const { language } = this.props;
 
     const handbookOptions = allHandbooks.map((item) => ({
@@ -55,18 +64,19 @@ class ListAllHandbook extends Component {
       label: language === LANGUAGES.VI ? item.name : item.nameEn || item.name,
     }));
 
-    const handbooksToRender = selectedHandbookId
+    const filteredHandbooks = selectedHandbookId
       ? allHandbooks.filter((item) => item.id === selectedHandbookId)
       : allHandbooks;
+
+    const indexOfLast = currentPage * handbooksPerPage;
+    const indexOfFirst = indexOfLast - handbooksPerPage;
+    const currentHandbooks = filteredHandbooks.slice(indexOfFirst, indexOfLast);
+    const totalPages = Math.ceil(filteredHandbooks.length / handbooksPerPage);
 
     return (
       <>
         <HomeHeader />
-        <LoadingOverlay
-          active={this.state.isShowLoading}
-          spinner
-          text="Loading..."
-        >
+        <LoadingOverlay active={isShowLoading} spinner text="Loading...">
           <div className="list-all-handbook-container py-4">
             <div className="container">
               <h3 className="text-center fw-bold mb-4">
@@ -89,7 +99,7 @@ class ListAllHandbook extends Component {
               </div>
 
               <div className="row">
-                {handbooksToRender.map((item, index) => (
+                {currentHandbooks.map((item, index) => (
                   <div className="col-6 col-md-4 col-lg-4 mb-4" key={index}>
                     <div
                       onClick={() => this.handleDetailHandbook(item.id)}
@@ -117,6 +127,28 @@ class ListAllHandbook extends Component {
                   </div>
                 ))}
               </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="pagination d-flex justify-content-center mt-4">
+                  {[...Array(totalPages)].map((_, index) => {
+                    const page = index + 1;
+                    return (
+                      <button
+                        key={page}
+                        className={`btn btn-sm mx-1 ${
+                          page === currentPage
+                            ? "btn-phantrang"
+                            : "btn-outline-phantrang"
+                        }`}
+                        onClick={() => this.handlePageChange(page)}
+                      >
+                        {page}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </LoadingOverlay>

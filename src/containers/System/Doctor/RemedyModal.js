@@ -40,7 +40,7 @@ class RemedyModal extends Component {
   handleSendRemedy = () => {
     const { email, imgBase64 } = this.state;
     if (!email) {
-      toast.error("Vui lòng nhập email ");
+      toast.error("Vui lòng nhập email");
       return;
     }
     if (!imgBase64) {

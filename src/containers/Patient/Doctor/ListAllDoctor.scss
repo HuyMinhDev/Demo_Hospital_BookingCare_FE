@@ -1,5 +1,6 @@
 .list-all-doctor-container {
   .bg-body-detail {
+    min-height: 100vh;
     background: #eee;
     padding: 10px 15px 15px 15px;
     .search-sp-doctor {
@@ -72,5 +73,21 @@
         }
       }
     }
+  }
+}
+.pagination {
+  min-width: 36px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .btn-phantrang {
+    background-color: #42b5db;
+    color: white;
+  }
+  .btn-outline-phantrang {
+    outline: #42b5db;
+    border-color: #42b5db;
+    color: #42b5db;
   }
 }

@@ -15,11 +15,12 @@
     "title1": "MEDICAL PLATFORM",
     "title2": "COMPREHENSIVE HEALTH CARE",
     "child3": "Specialist examination",
-    "child4": "Remote examination",
-    "child5": "General examination",
-    "child6": "Medical test",
-    "child7": "Mental health",
-    "child8": "Dental checkup"
+    "child4": "Media",
+    "child5": "Medical examination guide",
+    "child6": "Medical facility",
+    "child7": "Medical specialist",
+    "child8": "Dental checkup",
+    "search-placeholder": "Search for specialties, doctors, clinics..."
   },
 
   "menu": {
@@ -42,7 +43,8 @@
     },
     "doctor": {
       "manage-schedule": "Manage Doctor's schedule",
-      "manage-patient": "Patient management"
+      "manage-patient": "Patient management",
+      "manage-medical-history": "medical history management"
     }
   },
   "manage-user": {

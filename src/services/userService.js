@@ -120,6 +120,10 @@ const getAllPatientForDocter = (data) => {
     `/api/get-list-patient-for-dortor?doctorId=${data.doctorId}&date=${data.date}`
   );
 };
+const getAllPatientHistory = (data) => {
+  return axios.get(`/api/get-list-patient-history?doctorId=${data.doctorId}`);
+};
+
 const postSendKemedy = (data) => {
   return axios.post("/api/send-remedy", data);
 };
@@ -201,4 +205,5 @@ export {
   saveVideoAbout,
   getAboutContent,
   deleteDoctor,
+  getAllPatientHistory,
 };

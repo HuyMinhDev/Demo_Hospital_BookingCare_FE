@@ -13,7 +13,8 @@ import {
 } from "../../../services/userService";
 import _ from "lodash";
 import Select from "react-select";
-
+import LoadingOverlay from "react-loading-overlay";
+import HomeFooter from "../../HomePage/HomeFooter";
 class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
@@ -21,10 +22,12 @@ class DetailSpecialty extends Component {
       arrDoctorId: [],
       dataDetailSpecialty: {},
       listProvince: [],
+      isShowLoading: false,
     };
   }
 
   async componentDidMount() {
+    this.setState({ isShowLoading: true });
     if (
       this.props.match &&
       this.props.match.params &&
@@ -70,9 +73,11 @@ class DetailSpecialty extends Component {
           dataDetailSpecialty: res.data,
           arrDoctorId: arrDoctorId,
           listProvince: dataProvince ? dataProvince : [],
+          isShowLoading: false,
         });
       } else {
         console.error("Failed to fetch doctor detail", res);
+        this.setState({ isShowLoading: false });
       }
     }
   }
@@ -120,70 +125,77 @@ class DetailSpecialty extends Component {
     console.log(">>>>>>Check state this.state: ", this.state);
     let { language } = this.props;
     return (
-      <div className="detail-specialty-container ">
-        <HomeHeader />
-        <div className="bg-description">
-          <div className="description-specialty container">
-            {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: dataDetailSpecialty.descriptionHTML,
-                }}
-              ></div>
-            )}
-          </div>
-        </div>
-        <div className="bg-body-detail">
-          <div className="container ps-0 pe-0">
-            <div className="search-sp-doctor">
-              <Select
-                options={
-                  listProvince?.map((item) => ({
-                    value: item.keyMap,
-                    label:
-                      language === LANGUAGES.VI ? item.valueVi : item.valueEn,
-                  })) || []
-                }
-                // value={this.state.listProvince}
-                onChange={(event) => this.handleOnChangeSelect(event)}
-                placeholder={
-                  language === LANGUAGES.VI
-                    ? "Chọn tỉnh/thành"
-                    : "Select province"
-                }
-              />
+      <LoadingOverlay
+        active={this.state.isShowLoading}
+        spinner
+        text="Loading..."
+      >
+        <div className="detail-specialty-container ">
+          <HomeHeader />
+          <div className="bg-description">
+            <div className="description-specialty container">
+              {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: dataDetailSpecialty.descriptionHTML,
+                  }}
+                ></div>
+              )}
             </div>
-
-            {arrDoctorId &&
-              arrDoctorId.length > 0 &&
-              arrDoctorId.map((item, index) => {
-                return (
-                  <div className="each-doctor" key={index}>
-                    <div className="dt-content-left">
-                      <div className="profile-doctor">
-                        <ProfileDoctor
-                          key={item}
-                          doctorId={item}
-                          isShowDescriptionDoctor={true}
-                          isShowLinkDetail={true}
-                          isShowPrice={false}
-                        />
-                      </div>
-                    </div>
-                    <div className="dt-content-right">
-                      <div className="doctor-schedule">
-                        <DoctorSchedule doctorIdFromParent={item} />
-                      </div>
-                      <div className="doctor-extra-infor">
-                        <DoctorExtraInfor doctorIdFromParent={item} />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
           </div>
+          <div className="bg-body-detail">
+            <div className="container ps-0 pe-0">
+              <div className="search-sp-doctor">
+                <Select
+                  options={
+                    listProvince?.map((item) => ({
+                      value: item.keyMap,
+                      label:
+                        language === LANGUAGES.VI ? item.valueVi : item.valueEn,
+                    })) || []
+                  }
+                  // value={this.state.listProvince}
+                  onChange={(event) => this.handleOnChangeSelect(event)}
+                  placeholder={
+                    language === LANGUAGES.VI
+                      ? "Chọn tỉnh/thành"
+                      : "Select province"
+                  }
+                />
+              </div>
+
+              {arrDoctorId &&
+                arrDoctorId.length > 0 &&
+                arrDoctorId.map((item, index) => {
+                  return (
+                    <div className="each-doctor" key={index}>
+                      <div className="dt-content-left">
+                        <div className="profile-doctor">
+                          <ProfileDoctor
+                            key={item}
+                            doctorId={item}
+                            isShowDescriptionDoctor={true}
+                            isShowLinkDetail={true}
+                            isShowPrice={false}
+                          />
+                        </div>
+                      </div>
+                      <div className="dt-content-right">
+                        <div className="doctor-schedule">
+                          <DoctorSchedule doctorIdFromParent={item} />
+                        </div>
+                        <div className="doctor-extra-infor">
+                          <DoctorExtraInfor doctorIdFromParent={item} />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <HomeFooter />
         </div>
-      </div>
+      </LoadingOverlay>
     );
   }
 }

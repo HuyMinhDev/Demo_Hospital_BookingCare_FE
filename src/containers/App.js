@@ -27,7 +27,15 @@ import ListAllSpecialty from "./Patient/Specialty/ListAllSpecialty.js";
 import ListAllClinic from "./Patient/Clinic/ListAllClinic.js";
 import DetailHandbook from "./Patient/Handbook/DetailHandbook.js";
 import ListAllHandbook from "./Patient/Handbook/ListAllHandbook.js";
+import BackToTop from "../components/BackToTop.js";
+
 class App extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     scrollRef: null,
+  //   };
+  // }
   handlePersistorState = () => {
     const { persistor } = this.props;
     let { bootstrapped } = persistor.getState();
@@ -41,7 +49,9 @@ class App extends Component {
       }
     }
   };
-
+  // handleScrollRef = (ref) => {
+  //   this.setState({ scrollRef: ref });
+  // };
   componentDidMount() {
     this.handlePersistorState();
   }
@@ -52,7 +62,10 @@ class App extends Component {
         <Router history={history}>
           <div className="main-container">
             <div className="content-container">
-              <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
+              <CustomScrollbars
+                className="scroll-container"
+                style={{ height: "100vh", width: "100%" }}
+              >
                 <Switch>
                   <Route path={path.HOME} exact component={Home} />
                   <Route
@@ -107,6 +120,9 @@ class App extends Component {
               draggable
               pauseOnHover
             />
+
+            <BackToTop />
+
             {/* <ToastContainer
               className="toast-container"
               toastClassName="toast-item"

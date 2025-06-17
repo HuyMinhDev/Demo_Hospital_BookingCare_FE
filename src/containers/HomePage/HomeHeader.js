@@ -9,11 +9,15 @@ import iconXetNghiemYHoc from "../../assets/iconxet-nghiem-y-hoc.png";
 import iconSucKhoeTinhThan from "../../assets/iconsuc-khoe-tinh-than.png";
 import iconKhamNhaKhoa from "../../assets/iconkham-nha-khoa.png";
 import logo from "../../assets/Logo-Bookingcare.svg";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions";
 import { Link, withRouter } from "react-router-dom/cjs/react-router-dom";
-import { getAllSpecialty } from "../../services/userService";
+import {
+  getAllSpecialty,
+  getAllDoctors,
+  getAllClinic,
+} from "../../services/userService";
 // import util from "../../utils/util";
 import { removeVietnameseTones } from "../../utils/util1";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,16 +35,48 @@ class HomeHeader extends Component {
   }
   async componentDidMount() {
     try {
-      const res = await getAllSpecialty();
-      if (res && res.errCode === 0) {
-        this.setState({
-          fullList: res.data || [],
-        });
+      const [specialtyRes, doctorRes, clinicRes] = await Promise.all([
+        getAllSpecialty(),
+        getAllDoctors(),
+        getAllClinic(),
+      ]);
+
+      let specialtyList = [];
+      let doctorList = [];
+      let clinicList = [];
+
+      if (specialtyRes?.errCode === 0) {
+        specialtyList = specialtyRes.data.map((item) => ({
+          ...item,
+          type: "specialty",
+        }));
       }
+
+      if (doctorRes?.errCode === 0) {
+        doctorList = doctorRes.data.map((item) => ({
+          ...item,
+          name: item.lastName + " " + item.firstName,
+          image: item.image,
+          id: item.id,
+          type: "doctor",
+        }));
+      }
+
+      if (clinicRes?.errCode === 0) {
+        clinicList = clinicRes.data.map((item) => ({
+          ...item,
+          type: "clinic",
+        }));
+      }
+
+      this.setState({
+        fullList: [...specialtyList, ...doctorList, ...clinicList],
+      });
     } catch (e) {
-      console.error("Error fetching specialties: ", e);
+      console.error("Error fetching data: ", e);
     }
   }
+
   handleSearchChange = (e) => {
     const keyword = e.target.value;
     const searchKeyword = removeVietnameseTones(keyword.toLowerCase());
@@ -56,7 +92,6 @@ class HomeHeader extends Component {
   };
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
-    // fire redux event : actions
   };
   returnToHome = () => {
     if (this.props.history) {
@@ -65,6 +100,7 @@ class HomeHeader extends Component {
   };
   render() {
     let language = this.props.language;
+    const { intl } = this.props;
 
     return (
       <React.Fragment>
@@ -85,7 +121,7 @@ class HomeHeader extends Component {
                 aria-label="Toggle navigation"
               >
                 <span className="icon-menu">
-                  <i class="fa-solid fa-bars"></i>
+                  <i className="fa-solid fa-bars"></i>
                 </span>
               </button>
               <Link
@@ -204,7 +240,9 @@ class HomeHeader extends Component {
                       <input
                         type="text"
                         className="form-control border-0 bg-transparent shadow-none"
-                        placeholder="Tìm chuyên khoa..."
+                        placeholder={intl.formatMessage({
+                          id: "banner.search-placeholder",
+                        })}
                         value={this.state.searchTerm}
                         onChange={this.handleSearchChange}
                       />
@@ -223,56 +261,75 @@ class HomeHeader extends Component {
               <div className="container text-center pb-3">
                 <div className="options-grid">
                   <div className="options-child">
-                    <div className="icon-child">
-                      <img src={iconHospital} alt="iconHospital" />
-                    </div>
-                    <div className="text-child">
-                      <FormattedMessage id="banner.child3" />
+                    <Link className="nav-link" to="/list-specialty">
+                      <div className="icon-child">
+                        <img src={iconHospital} alt="iconHospital" />
+                      </div>
+                      <div className="text-child">
+                        <FormattedMessage id="banner.child3" />
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="options-child">
+                    <div
+                      className="nav-link"
+                      onClick={() => {
+                        const section = document.getElementById("about");
+                        if (section) {
+                          section.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="icon-child">
+                        <img src={iconTuXa} alt="iconTuXa" />
+                      </div>
+                      <div className="text-child">
+                        <FormattedMessage id="banner.child4" />
+                      </div>
                     </div>
                   </div>
                   <div className="options-child">
-                    <div className="icon-child">
-                      <img src={iconTuXa} alt="iconTuXa" />
-                    </div>
-                    <div className="text-child">
-                      <FormattedMessage id="banner.child4" />
-                    </div>
+                    <Link className="nav-link" to="/list-handbook">
+                      <div className="icon-child">
+                        <img src={iconKhamTongQuan} alt="iconKhamTongQuan" />
+                      </div>
+                      <div className="text-child">
+                        <FormattedMessage id="banner.child5" />
+                      </div>
+                    </Link>
                   </div>
                   <div className="options-child">
-                    <div className="icon-child">
-                      <img src={iconKhamTongQuan} alt="iconKhamTongQuan" />
-                    </div>
-                    <div className="text-child">
-                      <FormattedMessage id="banner.child5" />
-                    </div>
+                    <Link className="nav-link" to="/list-clinic">
+                      <div className="icon-child">
+                        <img src={iconXetNghiemYHoc} alt="iconXetNghiemYHoc" />
+                      </div>
+                      <div className="text-child">
+                        <FormattedMessage id="banner.child6" />
+                      </div>
+                    </Link>
                   </div>
                   <div className="options-child">
-                    <div className="icon-child">
-                      <img src={iconXetNghiemYHoc} alt="iconXetNghiemYHoc" />
-                    </div>
-                    <div className="text-child">
-                      <FormattedMessage id="banner.child6" />
-                    </div>
+                    <Link className="nav-link" to="/list-doctor">
+                      <div className="icon-child">
+                        <img
+                          src={iconSucKhoeTinhThan}
+                          alt="iconSucKhoeTinhThan"
+                        />
+                      </div>
+                      <div className="text-child">
+                        <FormattedMessage id="banner.child7" />
+                      </div>
+                    </Link>
                   </div>
-                  <div className="options-child">
-                    <div className="icon-child">
-                      <img
-                        src={iconSucKhoeTinhThan}
-                        alt="iconSucKhoeTinhThan"
-                      />
-                    </div>
-                    <div className="text-child">
-                      <FormattedMessage id="banner.child7" />
-                    </div>
-                  </div>
-                  <div className="options-child">
+                  {/* <div className="options-child">
                     <div className="icon-child">
                       <img src={iconKhamNhaKhoa} alt="iconKhamNhaKhoa" />
                     </div>
                     <div className="text-child">
                       <FormattedMessage id="banner.child8" />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -298,5 +355,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(HomeHeader)
+  connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomeHeader))
 );

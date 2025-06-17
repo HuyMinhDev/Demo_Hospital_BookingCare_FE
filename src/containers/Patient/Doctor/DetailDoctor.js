@@ -8,17 +8,20 @@ import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfor from "./DoctorExtraInfor";
 import LikeAndShare from "../socialPlugin/LikeAndShare";
 import Comment from "../socialPlugin/Comment";
-
+import LoadingOverlay from "react-loading-overlay";
+import HomeFooter from "../../HomePage/HomeFooter";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       detailDoctor: {},
       currentDoctorId: -1,
+      isShowLoading: false,
     };
   }
 
   async componentDidMount() {
+    this.setState({ isShowLoading: true });
     if (
       this.props.match &&
       this.props.match.params &&
@@ -33,9 +36,11 @@ class DetailDoctor extends Component {
       if (res && res.errCode === 0) {
         this.setState({
           detailDoctor: res.data,
+          isShowLoading: false,
         });
       } else {
         console.error("Failed to fetch doctor detail", res);
+        this.setState({ isShowLoading: false });
       }
     }
   }
@@ -62,7 +67,11 @@ class DetailDoctor extends Component {
     //     : window.location.href;
 
     return (
-      <>
+      <LoadingOverlay
+        active={this.state.isShowLoading}
+        spinner
+        text="Loading..."
+      >
         <HomeHeader isShowBanner={false} />
         <div className="doctor-detail-container container">
           <div className="intro-doctor">
@@ -117,7 +126,8 @@ class DetailDoctor extends Component {
             </div>
           </div>
         </div>
-      </>
+        <HomeFooter />
+      </LoadingOverlay>
     );
   }
 }

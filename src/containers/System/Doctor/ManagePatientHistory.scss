@@ -1,0 +1,38 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay {
+    z-index: 999999999;
+  }
+}
+
+.manage-patient-container {
+  .m-p-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
+    color: #0071ba;
+  }
+  .manage-patient-body {
+    padding: 0 20px;
+    .table-manage-patient {
+    }
+    .btn-double {
+      // display: flex;
+      // gap: 10px;
+
+      button {
+        border: none;
+        text-align: center;
+        color: white;
+      }
+      .mp-btn-conform {
+        // margin-right: 10px;
+        // padding: 10px;
+        // border-radius: 5px;
+        // background-color: orange;
+      }
+    }
+  }
+}

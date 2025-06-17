@@ -13,6 +13,9 @@ html {
 }
 
 .content-container {
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
   .title {
     text-align: center;
     text-transform: uppercase;

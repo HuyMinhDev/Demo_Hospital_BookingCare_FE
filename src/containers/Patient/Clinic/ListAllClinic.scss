@@ -1,6 +1,6 @@
 .list-all-clinic-container {
   overflow-x: hidden;
-
+  min-height: 100vh;
   .clinic-card {
     transition: transform 0.2s ease;
     border-radius: 8px;
@@ -19,5 +19,21 @@
       font-weight: 600;
       font-size: 1rem;
     }
+  }
+}
+.pagination {
+  min-width: 36px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .btn-phantrang {
+    background-color: #42b5db;
+    color: white;
+  }
+  .btn-outline-phantrang {
+    outline: #42b5db;
+    border-color: #42b5db;
+    color: #42b5db;
   }
 }

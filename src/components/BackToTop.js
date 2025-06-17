@@ -10,15 +10,24 @@ class BackToTop extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.toggleVisibility);
+    setTimeout(() => {
+      const container = this.props.scrollRef?._container; // Truy cập vùng scroll bên trong CustomScrollbars
+
+      if (container) {
+        this.scrollContainer = container;
+        this.scrollContainer.addEventListener("scroll", this.toggleVisibility);
+      }
+    }, 0);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.toggleVisibility);
+    if (this.scrollContainer) {
+      this.scrollContainer.removeEventListener("scroll", this.toggleVisibility);
+    }
   }
 
   toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
+    if (this.scrollContainer?.scrollTop > 300) {
       this.setState({ isVisible: true });
     } else {
       this.setState({ isVisible: false });
@@ -26,18 +35,22 @@ class BackToTop extends Component {
   };
 
   scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (this.scrollContainer) {
+      this.scrollContainer.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   render() {
+    const { isVisible } = this.state;
+
     return (
-      this.state.isVisible && (
-        <div className="back-to-top" onClick={this.scrollToTop}>
-          ↑
-        </div>
+      isVisible && (
+        <button className="back-to-top" onClick={this.scrollToTop}>
+          ⬆
+        </button>
       )
     );
   }

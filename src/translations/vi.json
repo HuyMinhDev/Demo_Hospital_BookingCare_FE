@@ -15,11 +15,12 @@
     "title1": "NỀN TẢNG Y TẾ",
     "title2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
     "child3": "Khám chuyên khoa",
-    "child4": "Khám từ xa",
-    "child5": "Khám tổng quát",
-    "child6": "Xét nghiệm y học",
-    "child7": "Sức khỏe tinh thần",
-    "child8": "Khám nha khoa"
+    "child4": "Truyền thông",
+    "child5": "Cẩm nang khám bệnh",
+    "child6": "Cơ sở y tế",
+    "child7": "Bác sĩ chuyên khoa",
+    "child8": "Khám nha khoa",
+    "search-placeholder": "Tìm kiếm chuyên khoa, bác sĩ, phòng khám..."
   },
 
   "menu": {
@@ -42,7 +43,8 @@
     },
     "doctor": {
       "manage-schedule": "Quản lý kế hoạch khám bệnh",
-      "manage-patient": "Quản lí bệnh nhân khám bệnh"
+      "manage-patient": "Quản lý bệnh nhân khám bệnh",
+      "manage-medical-history": "Quản lý lịch sử khám bệnh"
     }
   },
   "manage-user": {

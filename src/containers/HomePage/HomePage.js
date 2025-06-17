@@ -15,6 +15,7 @@ import "./HomePage.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BackToTop from "../../components/BackToTop.js";
+
 class HomePage extends Component {
   render() {
     let settings = {
@@ -63,7 +64,7 @@ class HomePage extends Component {
         <HandBook settings={settings} />
         <About />
         <HomeFooter />
-        <BackToTop />
+        {/* <BackToTop /> */}
       </div>
     );
   }

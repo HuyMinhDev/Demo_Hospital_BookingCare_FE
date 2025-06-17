@@ -27,7 +27,7 @@ class About extends Component {
     const { videoLink, descriptionHTML } = this.state;
 
     return (
-      <section className="py-5 bg-light">
+      <section id="about" className="py-5 bg-light">
         <div className="container">
           <h2 className="text-center mb-4 fw-bold">
             <FormattedMessage

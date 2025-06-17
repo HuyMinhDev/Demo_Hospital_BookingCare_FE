@@ -8,9 +8,10 @@ import DoctorSchedule from "../Doctor/DoctorSchedule";
 import DoctorExtraInfor from "../Doctor/DoctorExtraInfor";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import { getDetailClinicById } from "../../../services/userService";
-
+import LoadingOverlay from "react-loading-overlay";
 import _ from "lodash";
 import Select from "react-select";
+import HomeFooter from "../../HomePage/HomeFooter";
 
 class DetailClinic extends Component {
   constructor(props) {
@@ -18,10 +19,12 @@ class DetailClinic extends Component {
     this.state = {
       arrDoctorId: [],
       dataDetailClinic: {},
+      isShowLoading: false,
     };
   }
 
   async componentDidMount() {
+    this.setState({ isShowLoading: true });
     if (
       this.props.match &&
       this.props.match.params &&
@@ -48,9 +51,11 @@ class DetailClinic extends Component {
         this.setState({
           dataDetailClinic: res.data,
           arrDoctorId: arrDoctorId,
+          isShowLoading: false,
         });
       } else {
         console.error("Failed to fetch doctor detail", res);
+        this.setState({ isShowLoading: false });
       }
     }
   }
@@ -98,74 +103,81 @@ class DetailClinic extends Component {
     console.log(">>>>>>Check state this.state: ", this.state);
     let { language } = this.props;
     return (
-      <div className="detail-clinic-container ">
-        <HomeHeader />
-        <div className="bg-description">
-          <div className="description-clinic container">
-            {/* Thông tin phòng khám */}
-            {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
-              <div className="clinic-header">
-                <div className="clinic-img">
-                  <img
-                    src={dataDetailClinic.image}
-                    alt={dataDetailClinic.name}
-                  />
-                </div>
-
-                <div className="clinic-titlename">
-                  <h2>{dataDetailClinic.name}</h2>
-                  <p>
-                    <i class="fa fa-map-marker"></i>
-                    {dataDetailClinic.address}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Mô tả HTML */}
-            {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
-              <div
-                className="desClinic"
-                dangerouslySetInnerHTML={{
-                  __html: dataDetailClinic.descriptionHTML,
-                }}
-              ></div>
-            )}
-          </div>
-        </div>
-
-        <div className="bg-body-detail">
-          <div className="container ps-0 pe-0">
-            {arrDoctorId &&
-              arrDoctorId.length > 0 &&
-              arrDoctorId.map((item, index) => {
-                return (
-                  <div className="each-doctor" key={index}>
-                    <div className="dt-content-left">
-                      <div className="profile-doctor">
-                        <ProfileDoctor
-                          key={item}
-                          doctorId={item}
-                          isShowDescriptionDoctor={true}
-                          isShowLinkDetail={true}
-                          isShowPrice={false}
-                        />
-                      </div>
-                    </div>
-                    <div className="dt-content-right">
-                      <div className="doctor-schedule">
-                        <DoctorSchedule doctorIdFromParent={item} />
-                      </div>
-                      <div className="doctor-extra-infor">
-                        <DoctorExtraInfor doctorIdFromParent={item} />
-                      </div>
-                    </div>
+      <LoadingOverlay
+        active={this.state.isShowLoading}
+        spinner
+        text="Loading..."
+      >
+        <div className="detail-clinic-container ">
+          <HomeHeader />
+          <div className="bg-description">
+            <div className="description-clinic container">
+              {/* Thông tin phòng khám */}
+              {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
+                <div className="clinic-header">
+                  <div className="clinic-img">
+                    <img
+                      src={dataDetailClinic.image}
+                      alt={dataDetailClinic.name}
+                    />
                   </div>
-                );
-              })}
+
+                  <div className="clinic-titlename">
+                    <h2>{dataDetailClinic.name}</h2>
+                    <p>
+                      <i class="fa fa-map-marker"></i>
+                      {dataDetailClinic.address}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Mô tả HTML */}
+              {dataDetailClinic && !_.isEmpty(dataDetailClinic) && (
+                <div
+                  className="desClinic"
+                  dangerouslySetInnerHTML={{
+                    __html: dataDetailClinic.descriptionHTML,
+                  }}
+                ></div>
+              )}
+            </div>
           </div>
+
+          <div className="bg-body-detail">
+            <div className="container ps-0 pe-0">
+              {arrDoctorId &&
+                arrDoctorId.length > 0 &&
+                arrDoctorId.map((item, index) => {
+                  return (
+                    <div className="each-doctor" key={index}>
+                      <div className="dt-content-left">
+                        <div className="profile-doctor">
+                          <ProfileDoctor
+                            key={item}
+                            doctorId={item}
+                            isShowDescriptionDoctor={true}
+                            isShowLinkDetail={true}
+                            isShowPrice={false}
+                          />
+                        </div>
+                      </div>
+                      <div className="dt-content-right">
+                        <div className="doctor-schedule">
+                          <DoctorSchedule doctorIdFromParent={item} />
+                        </div>
+                        <div className="doctor-extra-infor">
+                          <DoctorExtraInfor doctorIdFromParent={item} />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <HomeFooter />
         </div>
-      </div>
+      </LoadingOverlay>
     );
   }
 }
