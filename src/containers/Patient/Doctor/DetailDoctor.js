@@ -59,7 +59,7 @@ class DetailDoctor extends Component {
         ? "https://www.facebook.com/permalink.php?story_fbid=pfbid0Y47aFGTS9q8AMKSF45kWNZezoMid26DtK3DZhgvRJFR1BHH747TK9zLAmhirfLcMl&id=61557876208398&__cft__[0]=AZXidQRNaJwmjV5VlZyG4R3VkoUqWVYr25NspR4UXHTsAmdktObppmiD_5oZxldnqneiiXyW4-gDsnPb0FRGr6hM5JxPx8dPOdjPhJDPA1r0H5xreTVBd7CBvbAhlm_16c_OlfG9QfYx1w7nkd6teKl4Z6M5EAaqqZ-jimi9pnlvaAT7eJJ8Z_vRjlsadCcqLfUkzvB4GufYaH5U3l5Y_zY2ae3rWClK0ubQeHIA9DdiW85V1ELBO-YSRCbDHrIFLko&__tn__=%2CO%2CP-R"
         : window.location.href;
 
-    let currentURL = `${window.location.origin}/detail-doctor/${this.state.currentDoctorId}`;
+    let currentURL = `${window.location.origin}/%20/detail-doctor/${this.state.currentDoctorId}`;
 
     // let currentURL =
     //   process.env.REACT_APP_IS_LOCALHOST === "1"
